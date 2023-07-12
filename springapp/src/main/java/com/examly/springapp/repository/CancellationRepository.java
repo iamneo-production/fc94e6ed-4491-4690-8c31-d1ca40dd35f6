@@ -1,5 +1,8 @@
 package com.examly.springapp.repository;
 
-public class CancellationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.examly.springapp.model.*;
+public interface CancellationRepository extends JpaRepository<Cancellation, Integer>{
     
 }
+
