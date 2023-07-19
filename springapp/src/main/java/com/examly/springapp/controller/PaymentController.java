@@ -4,14 +4,13 @@ import com.examly.springapp.model.Payment;
 import com.examly.springapp.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/bookings/{bookingId}/payments")
 public class PaymentController {
 
-    private final PaymentService paymentService;
+   private final PaymentService paymentService;
 
     @Autowired
     public PaymentController(PaymentService paymentService) {

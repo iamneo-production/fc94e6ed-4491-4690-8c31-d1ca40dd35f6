@@ -47,7 +47,7 @@ public class BookingController {
         bookingService.deleteBooking(bookingId);
     }
 
-    @GetMapping("/{bookingId}/payments")
+   @GetMapping("/{bookingId}/payments")
     public List<Payment> getAllPaymentsForBooking(@PathVariable int bookingId) {
         return bookingService.getAllPaymentsForBooking(bookingId);
     }
@@ -90,4 +90,3 @@ public class BookingController {
         bookingService.deleteCancellationForBooking(bookingId, cancellationId);
     }
 }
-

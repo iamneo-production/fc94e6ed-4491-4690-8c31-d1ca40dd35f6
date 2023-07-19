@@ -2,7 +2,7 @@
 
 .container {
     max-width: 1000px;
-    height: 800px;
+    
     margin: 0 auto;
     padding: 30px;
   }
@@ -62,7 +62,7 @@
     background-color: #00666d;
   }
   
-  .hotel-list {
+  /*.hotel-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
@@ -80,7 +80,7 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     font-size: 8px; 
-  }
+  }*/
   
   #sh {
     float: right;

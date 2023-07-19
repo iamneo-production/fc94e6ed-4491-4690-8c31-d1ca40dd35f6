@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './HotelBookingForm.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
+
 
 const HotelBookingForm = () => {
   const [hotelsData, setHotelsData] = useState([])
@@ -46,18 +48,10 @@ const HotelBookingForm = () => {
     <div>
         <div className="container">
         
-        <form className="search-form" onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Destination"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-          />
-
-          <button type="submit">Search</button>
-        </form>
-        <h2 style={{textAlign:'center', color:'blue'}}>ENTER LOCATION TO VIEW LIST OF HOTELS</h2>
-        <p style={{textAlign:'center',color:'blue'}}>(Chennai,Bangalore,Mumbai,Delhi)</p>
+        <h1 style={{alignText:'center'}}>Welcome</h1>
+        <Link to='/landing'><button style={{alignItems:'center'}}>Book Your Stay On one Click</button></Link>
+        
+       
         <div className="hotel-list">
           {currentHotels.map((hotel) => (
             <div className="hotels-item" key={hotel.id}>
@@ -87,8 +81,9 @@ const HotelBookingForm = () => {
           )}
         </div>
       </div>
-      <h2 style={{textAlign:'center',color:'blue'}}>(Please click the location for hotel booking)</h2>
-      <h2>POPULAR DESTINATION</h2>
+      
+      <h1 style={{textAlign: 'center'}}>HAPPY BOOKING</h1>
+      <h3 style={{textAlign:'center',color:'blue'}}>Create Your Memories on Staying</h3>
       <div className="popular-destinations">
         <div className="destination-box chennai">
           <button onClick={() => handleButtonClick('Chennai')}>
@@ -114,6 +109,7 @@ const HotelBookingForm = () => {
           </button>
           <p>Enjoy the Bollywood charm and bustling city life.</p>
         </div>
+        
       </div>
       </div>
   );

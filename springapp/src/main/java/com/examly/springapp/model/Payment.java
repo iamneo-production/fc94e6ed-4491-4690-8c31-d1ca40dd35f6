@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,9 +19,20 @@ public class Payment {
     private double amount;
     private LocalDateTime paymentDateTime;
     private String paymentStatus;
+
     @ManyToOne
     @JoinColumn(name="booking_id")
     private Booking booking;
+
+
+public Booking getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Booking booking) {
+        this.booking = booking;
+    }
+
 
     public Payment() {
         // Default constructor

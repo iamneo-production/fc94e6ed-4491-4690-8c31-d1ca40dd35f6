@@ -1,0 +1,45 @@
+
+
+
+.home h2{
+    font-weight: 600;
+    color: blue;
+    letter-spacing: 0.7px;
+    
+}
+
+.home p{
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    margin-top: -3%;
+}
+
+.img-text{
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -80px;
+}
+
+img{
+    width: 95vw;
+    display: block;
+    border-radius: 5%;
+}
+
+.home button{
+    padding: 0.6rem 2rem;
+    background: #f60838;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0.2rem;
+
+}
+
+.home button:hover{
+    background-color: rgb(9, 47, 99);
+    color: white;
+}

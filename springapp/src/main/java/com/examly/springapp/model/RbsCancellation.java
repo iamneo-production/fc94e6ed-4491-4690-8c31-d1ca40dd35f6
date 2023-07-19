@@ -2,6 +2,9 @@ package com.examly.springapp.model;
 
 
 
-public class Room {
+
+public class RbsCancellation {
+
+   
     
 }

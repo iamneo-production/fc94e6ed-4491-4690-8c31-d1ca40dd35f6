@@ -1,7 +1,6 @@
 package com.examly.springapp.model;
 
 
+public class RbsPayment {
 
-public class Room {
-    
 }
