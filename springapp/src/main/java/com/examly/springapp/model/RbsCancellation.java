@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Column;
+import com.examly.springapp.model.RbsBooking;
 
 
 import java.util.Date;
@@ -32,13 +33,13 @@ public class RbsCancellation {
     
     @ManyToOne
     @JoinColumn(name="booking_id")
-    private Booking booking;
+    private RbsBooking booking;
     
     
-    public Booking getBooking() {
+    public RbsBooking getBooking() {
         return booking;
     }
-    public void setBooking(Booking booking) {
+    public void setBooking(RbsBooking booking) {
         this.booking = booking;
     } 
 
