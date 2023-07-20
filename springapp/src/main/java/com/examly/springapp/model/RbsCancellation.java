@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Column;
-import com.examly.springapp.model.RbsBooking;
+
 
 
 import java.util.Date;

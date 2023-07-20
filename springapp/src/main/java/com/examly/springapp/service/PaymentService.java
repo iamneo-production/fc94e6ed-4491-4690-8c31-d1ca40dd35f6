@@ -10,7 +10,7 @@ import com.examly.springapp.model.Booking;
 
 
 
-    /*private final PaymentRepository paymentRepository;
+/*private final PaymentRepository paymentRepository;
 
     @Autowired
     public PaymentService(PaymentRepository paymentRepository) {

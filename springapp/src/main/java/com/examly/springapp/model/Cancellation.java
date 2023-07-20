@@ -8,8 +8,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import java.util.Date;
-@Entity
 
+
+@Entity
 public class Cancellation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

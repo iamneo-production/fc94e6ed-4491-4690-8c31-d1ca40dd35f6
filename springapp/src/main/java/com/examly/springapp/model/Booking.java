@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
 @Entity
 public class Booking {
     @Id
@@ -18,14 +19,18 @@ public class Booking {
     private int id;
     private Date checkInDate;
     private Date checkOutDate;
+
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
+
     @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
     private List<Payment> payments;
+    
     @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
     private List<Cancellation> cancellations;
 

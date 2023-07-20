@@ -1,6 +1,4 @@
 package com.examly.springapp.controller;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 import java.util.Date;
 import com.examly.springapp.payload.ApiResponse;
-
-
 import com.examly.springapp.service.RbsBookingService;
-
-
 import com.examly.springapp.service.RbsPaymentService;
 import com.examly.springapp.payload.RbsBookingDto;
 
@@ -28,10 +22,10 @@ import com.examly.springapp.payload.RbsBookingDto;
 @CrossOrigin(origins="*")
 @RestController
 @RequestMapping("api/v1")
-
-
-
 public class RbsBookingController {
+
+    private RbsBookingService bookingService;
+
     @PutMapping("/{id}")
     public ResponseEntity<RbsBookingDto> updateBooking(
             @RequestBody RbsBookingDto bookingDto, 
@@ -59,14 +53,9 @@ public class RbsBookingController {
     }
     
     
-    
-    
-    
-    
 }
 
 
 
 
     
-}

@@ -17,7 +17,7 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    @GetMapping
+  /*  @GetMapping
     public List<Payment> getAllPaymentsForBooking(@PathVariable int bookingId) {
         return paymentService.getAllPaymentsForBooking(bookingId);
     }
@@ -36,5 +36,5 @@ public class PaymentController {
     @DeleteMapping("/{paymentId}")
     public void deletePaymentForBooking(@PathVariable int bookingId, @PathVariable int paymentId) {
         paymentService.deletePaymentForBooking(bookingId, paymentId);
-    }
+    }*/
 }

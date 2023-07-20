@@ -2,8 +2,6 @@ package com.examly.springapp.model;
 
 
 import java.util.List;
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,7 +39,7 @@ public class RbsRoom {
     private double pricePerNight;
     
      @OneToMany(mappedBy="room")
-     private List<Booking> bookings;
+     private List<RbsBooking> bookings;
 
 
     public RbsRoom() {
@@ -114,4 +112,5 @@ public class RbsRoom {
 
     
 }
+
 
