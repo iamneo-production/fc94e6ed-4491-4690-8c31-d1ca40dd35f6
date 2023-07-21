@@ -1,6 +1,6 @@
 package com.examly.springapp.service;
 
-import com.examly.springapp.model.Payment;
+import com.examly.springapp.payload.PaymentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -49,7 +49,7 @@ import com.examly.springapp.model.Booking;
 
     
 
-@Service
+/*@Service
 public class PaymentService {
     private final PaymentRepository paymentRepository;
 
@@ -84,4 +84,26 @@ public class PaymentService {
             paymentRepository.delete(existingPayment);
         }
     }
+}*/
+
+public interface PaymentService {
+
+   /* PaymentDto updatePayment(PaymentDto payment, Integer paymentId);
+
+    PaymentDto getPaymentById(Integer paymentId);
+
+    void deletePayment(Integer paymentId);*/
+
+    //update payment for specific booking
+	PaymentDto updatePaymentForSpecificBooking(PaymentDto payment, Integer bookingId);
+	
+	//delete payment for specific booking
+	void deletePaymentForSpecificBooking(Integer bookingId, Integer paymentId);
+
+	List<PaymentDto> getAllPaymentsforSpecificBooking(Integer bookingId);
+
+	PaymentDto createPayment(PaymentDto paymentDto, Integer bookingId);
+
+
 }
+

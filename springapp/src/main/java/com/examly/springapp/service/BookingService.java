@@ -7,10 +7,12 @@ import com.examly.springapp.repository.*;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import com.examly.springapp.payload.BookingDto;
 
-@Service
-public class BookingService {
-    private final BookingRepository bookingRepository;
+
+
+public interface BookingService {
+    /*private final BookingRepository bookingRepository;
     private final PaymentRepository paymentRepository;
     private final CancellationRepository cancellationRepository;
 
@@ -170,7 +172,19 @@ public void deleteCancellationForBooking(int bookingId, int cancellationId) {
     booking.setCancellations(cancellations);
     bookingRepository.save(booking);
     cancellationRepository.delete(cancellationToRemove);
-}
+}*/
+
+    BookingDto createSingleBooking(BookingDto booking);
+
+    BookingDto updateBooking(BookingDto booking, Integer id);
+	
+    BookingDto getBookingById(Integer id);
+
+    List<BookingDto> getAllBookings();
+
+    void deleteBooking(Integer id);
+
+    
 }
 
 
