@@ -1,0 +1,80 @@
+.getIn {
+    text-align: center;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    
+    
+
+    
+}
+
+.auth-form-container,
+.login-form,
+.register-form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.login-form{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+}
+
+
+
+label {
+    text-align: left;
+    padding: 0.25rem 0;
+}
+
+input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.rcb {
+    border: none;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background-color: aqua;
+
+}
+
+.link-btn {
+    background: none;
+    color: black;
+    text-decoration: underline;
+}
+
+@media screen and (min-width:600px) {
+    .form-container {
+        background-color: white;
+        width: 350px;
+        height: 540px;
+        border-radius: 30px;
+        padding: 10px 30px 40px 30px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .auth-form-container {
+        background-color: white;
+        width: 350px;
+        height: 430px;
+        border-radius: 30px;
+        padding: 10px 30px 40px 30px;
+    }
+}
