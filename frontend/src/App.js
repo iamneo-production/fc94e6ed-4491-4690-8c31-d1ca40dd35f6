@@ -8,6 +8,8 @@ import Home from './Home';
 import ContactUs from './ContactUs';
 import About from './About';
 import Profile from './Profile';
+import RoomDetails from './RoomDetails';
+import RoomTypes from './RoomTypes';
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
       <Route path='/about' element={<About/>}></Route>
       <Route path='/contact' element={<ContactUs />}></Route>
       <Route path='/profile' element={<Profile/>}></Route>
+      <Route path='/room/:roomId' element={<RoomDetails/>}></Route>
+      <Route path='/home' element={<RoomTypes />}></Route>
+
       </Routes>
     </BrowserRouter>
   );
