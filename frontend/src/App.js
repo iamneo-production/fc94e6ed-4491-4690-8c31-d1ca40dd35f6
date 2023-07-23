@@ -10,6 +10,8 @@ import About from './About';
 import Profile from './Profile';
 import RoomDetails from './RoomDetails';
 import RoomTypes from './RoomTypes';
+import Bookings from './Bookings';
+import BookingDetails from './BookingDetails';
 
 function App() {
   return (
@@ -23,7 +25,10 @@ function App() {
       <Route path='/contact' element={<ContactUs />}></Route>
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/room/:roomId' element={<RoomDetails/>}></Route>
-      <Route path='/home' element={<RoomTypes />}></Route>
+      <Route path='/home' element={<Home />}></Route>
+      <Route path='/room-types' element={<RoomTypes/>}></Route>
+      <Route path="/booking-details" element={<BookingDetails />} />
+      <Route path='/bookings' element={<Bookings />}></Route>
 
       </Routes>
     </BrowserRouter>

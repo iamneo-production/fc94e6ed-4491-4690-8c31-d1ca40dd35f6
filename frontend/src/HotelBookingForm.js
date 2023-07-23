@@ -49,7 +49,7 @@ const HotelBookingForm = () => {
         <div className="container">
         
         <h1 style={{alignText:'center'}}>Welcome</h1>
-        <Link to='/landing'><button style={{alignItems:'center'}}>Book Your Stay On one Click</button></Link>
+        <Link to='/home'><button style={{alignItems:'center'}}>Book Your Stay On one Click</button></Link>
         
        
         <div className="hotel-list">

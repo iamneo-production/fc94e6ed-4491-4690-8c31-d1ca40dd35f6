@@ -123,7 +123,7 @@ function Register(props) {
                     }
                 );
 
-                navigate("/home");
+                navigate("/room-types");
             } catch (error) {
                 console.error("Error posting data:", error);
             }
