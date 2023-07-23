@@ -15,7 +15,7 @@ import javax.persistence.GenerationType;
 
 @Entity
 public class Booking {
-    /*@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Date checkInDate;
@@ -106,124 +106,8 @@ public class Booking {
 
     public void setCancellations(List<Cancellation> cancellations) {
         this.cancellations = cancellations;
-    }*/
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
-    private Date checkInDate;
-    private Date checkOutDate;
-    
-    @ManyToOne
-    @JoinColumn(name = "room_id")
-    private Room room;
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Payment> payments;
-    
-    
-    
-    public List<Payment> getPayments() {
-		return payments;
-	}
-
-	public void setPayments(List<Payment> payments) {
-		this.payments = payments;
-	}
-
-	public List<Cancellation> getCancellations() {
-		return cancellations;
-	}
-
-	public void setCancellations(List<Cancellation> cancellations) {
-		this.cancellations = cancellations;
-	}
-	@OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
-    private List<Cancellation> cancellations;
-    
-    
-    @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
-    private Payment payment; // Add payment property
-    
-    @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
-    private Cancellation cancellation;
-    
-    
-    public Cancellation getCancellation() {
-		return cancellation;
-	}
-
-	public void setCancellation(Cancellation cancellation) {
-		this.cancellation = cancellation;
-	}
-
-	public Payment getPayment() {
-        return payment;
     }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
-    
-    public Booking(int id, Date checkInDate, Date checkOutDate, Room room, Customer customer,
-            List<Payment> payments, List<Cancellation> cancellations) {
-    				this.id = id;
-    				this.checkInDate = checkInDate;
-    				this.checkOutDate = checkOutDate;
-    				this.room = room;
-    				this.customer = customer;
-    				this.payments = payments;
-    				this.cancellations = cancellations;
-    }
-    
-    
-    public Room getRoom() {
-		return room;
-		
-	}
-
-	public void setRoom(Room room) {
-		this.room = room;
-	}
-
-    public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
-	public Booking() {
-		super();
-		
-	}
-
-    public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public Date getCheckInDate() {
-		return checkInDate;
-	}
-	public void setCheckInDate(Date checkInDate) {
-		this.checkInDate = checkInDate;
-		
-	}
-	public Date getCheckOutDate() {
-		
-		return checkOutDate;
-	}
-	public void setCheckOutDate(Date checkOutDate) {
-		this.checkOutDate = checkOutDate;
-		
-	}
 }
 
     

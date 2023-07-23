@@ -1,16 +1,13 @@
 package com.examly.springapp.service;
 
-
-import com.examly.springapp.repository.*;
-import java.util.List;
-import org.springframework.stereotype.Service;
-
 import com.examly.springapp.model.*;
+import org.springframework.stereotype.Service;
+import java.util.List;
+import com.examly.springapp.repository.*;
+
 @Service
-public class PaymentImplService implements PaymentService{
-
-    private final PaymentRepository paymentRepository;
-
+public class PaymentImplService implements PaymentService {
+    private PaymentRepository paymentRepository;
 
     public PaymentImplService(PaymentRepository paymentRepository) {
         this.paymentRepository = paymentRepository;
@@ -21,13 +18,18 @@ public class PaymentImplService implements PaymentService{
     }
 
     public Payment createPaymentForBooking(int bookingId, Payment payment) {
-        payment.setBooking(new Booking(bookingId, null, null, null, null, null, null));
+        // Set the booking for the payment
+        Booking booking = new Booking();
+        booking.setId(bookingId);
+        payment.setBooking(booking);
         return paymentRepository.save(payment);
     }
 
     public Payment updatePaymentForBooking(int bookingId, int paymentId, Payment payment) {
+        // Check if the payment exists
         Payment existingPayment = paymentRepository.findById(paymentId).orElse(null);
         if (existingPayment != null) {
+            // Update the payment details
             existingPayment.setAmount(payment.getAmount());
             existingPayment.setPaymentDateTime(payment.getPaymentDateTime());
             existingPayment.setPaymentStatus(payment.getPaymentStatus());
@@ -37,6 +39,7 @@ public class PaymentImplService implements PaymentService{
     }
 
     public void deletePaymentForBooking(int bookingId, int paymentId) {
+        // Check if the payment exists
         Payment existingPayment = paymentRepository.findById(paymentId).orElse(null);
         if (existingPayment != null) {
             paymentRepository.delete(existingPayment);
