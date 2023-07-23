@@ -49,39 +49,49 @@ import com.examly.springapp.model.Booking;
 
     
 
-@Service
-public class PaymentService {
-    private final PaymentRepository paymentRepository;
+// @Service
+// public class PaymentService {
+//     private final PaymentRepository paymentRepository;
 
-    @Autowired
-    public PaymentService(PaymentRepository paymentRepository) {
-        this.paymentRepository = paymentRepository;
-    }
+//     @Autowired
+//     public PaymentService(PaymentRepository paymentRepository) {
+//         this.paymentRepository = paymentRepository;
+//     }
 
-    public List<Payment> getAllPaymentsForBooking(int bookingId) {
-        return paymentRepository.findByBookingId(bookingId);
-    }
+//     public List<Payment> getAllPaymentsForBooking(int bookingId) {
+//         return paymentRepository.findByBookingId(bookingId);
+//     }
 
-    public Payment createPaymentForBooking(int bookingId, Payment payment) {
-        payment.setBooking(new Booking(bookingId, null, null, null, null, null, null));
-        return paymentRepository.save(payment);
-    }
+//     public Payment createPaymentForBooking(int bookingId, Payment payment) {
+//         payment.setBooking(new Booking(bookingId, null, null, null, null, null, null));
+//         return paymentRepository.save(payment);
+//     }
 
-    public Payment updatePaymentForBooking(int bookingId, int paymentId, Payment payment) {
-        Payment existingPayment = paymentRepository.findById(paymentId).orElse(null);
-        if (existingPayment != null) {
-            existingPayment.setAmount(payment.getAmount());
-            existingPayment.setPaymentDateTime(payment.getPaymentDateTime());
-            existingPayment.setPaymentStatus(payment.getPaymentStatus());
-            return paymentRepository.save(existingPayment);
-        }
-        return null;
-    }
+//     public Payment updatePaymentForBooking(int bookingId, int paymentId, Payment payment) {
+//         Payment existingPayment = paymentRepository.findById(paymentId).orElse(null);
+//         if (existingPayment != null) {
+//             existingPayment.setAmount(payment.getAmount());
+//             existingPayment.setPaymentDateTime(payment.getPaymentDateTime());
+//             existingPayment.setPaymentStatus(payment.getPaymentStatus());
+//             return paymentRepository.save(existingPayment);
+//         }
+//         return null;
+//     }
 
-    public void deletePaymentForBooking(int bookingId, int paymentId) {
-        Payment existingPayment = paymentRepository.findById(paymentId).orElse(null);
-        if (existingPayment != null) {
-            paymentRepository.delete(existingPayment);
-        }
-    }
+//     public void deletePaymentForBooking(int bookingId, int paymentId) {
+//         Payment existingPayment = paymentRepository.findById(paymentId).orElse(null);
+//         if (existingPayment != null) {
+//             paymentRepository.delete(existingPayment);
+//         }
+//     }
+// }
+
+public interface PaymentService {
+    List<Payment> getAllPaymentsForBooking(int bookingId);
+
+    Payment createPaymentForBooking(int bookingId, Payment payment);
+
+    Payment updatePaymentForBooking(int bookingId, int paymentId, Payment payment);
+
+    void deletePaymentForBooking(int bookingId, int paymentId);
 }
