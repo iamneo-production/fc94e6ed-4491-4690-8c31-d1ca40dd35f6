@@ -28,8 +28,8 @@ com/examly/springapp/repository/RbsCancellationRepository.class
 com/examly/springapp/SpringappApplication.class
 com/examly/springapp/payload/PaymentDto.class
 com/examly/springapp/controller/RbsCustomerController.class
-com/examly/springapp/model/Booking.class
 com/examly/springapp/service/serviceImpl/RbsRoomServiceImpl.class
+com/examly/springapp/model/Booking.class
 com/examly/springapp/controller/RbsBookingController.class
 com/examly/springapp/service/RbsBookingService.class
 com/examly/springapp/exception/ResourceNotFoundException.class
@@ -38,8 +38,8 @@ com/examly/springapp/model/RbsCancellation.class
 com/examly/springapp/controller/BookingController.class
 com/examly/springapp/model/Customer.class
 com/examly/springapp/service/serviceImpl/RbsPaymentServiceImpl.class
-com/examly/springapp/model/Payment.class
 com/examly/springapp/service/RoomService.class
+com/examly/springapp/model/Payment.class
 com/examly/springapp/payload/ApiResponse.class
 com/examly/springapp/repository/RbsRoomRepository.class
 com/examly/springapp/controller/PaymentController.class
