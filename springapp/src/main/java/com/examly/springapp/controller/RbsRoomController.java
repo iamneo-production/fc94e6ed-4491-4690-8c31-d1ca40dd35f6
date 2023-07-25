@@ -18,8 +18,9 @@ import com.examly.springapp.payload.RbsRoomDto;
 import com.examly.springapp.service.RbsRoomService;
 import java.util.List;
 import com.examly.springapp.payload.ApiResponse;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("/api/rooms")
 public class RbsRoomController {

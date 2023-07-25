@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './LoginReg.css';
+import {endpoint} from './config';
+
 
 function Register(props) {
     const [name, setName] = useState("");
@@ -99,7 +100,7 @@ function Register(props) {
             console.log("Registration successful!");
 
             try {
-                const apiUrl = "http://localhost:8282/api/v1/customers";
+                const apiUrl = `${endpoint.url}/api/v1/customers`;
                 const data = {
                     name,
                     email,

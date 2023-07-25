@@ -8,6 +8,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import { endpoint } from './config';
 //import "./BookingDetails.css";
 
 const BookingDetails = () => {
@@ -25,7 +26,7 @@ const BookingDetails = () => {
 
     const getData = () => {
         axios
-            .get(`http://localhost:8080/api/v1/customers/${id}/bookings`)
+            .get(`${endpoint.url}/api/v1/customers/${id}/bookings`)
             .then((response) => {
                 setBookings(response.data);
                 
@@ -46,7 +47,7 @@ const BookingDetails = () => {
             };
 
             // Make a POST request to your server with the booking ID for payment processing
-            await axios.post(`http://localhost:8080/api/v1/bookings/${bookingId}/payments`, paymentDetails);
+            await axios.post(`${endpoint.url}/api/v1/bookings/${bookingId}/payments`, paymentDetails);
 
             // Display a success message or perform any necessary actions
             toast.success('Payment done successfully', {
@@ -89,7 +90,7 @@ const BookingDetails = () => {
         try {
             const confirmed = window.confirm('Are you sure you want to cancel this booking?');
             if (confirmed) {
-                await axios.delete(`http://localhost:8080/api/v1/${bookingId}`);
+                await axios.delete(`${endpoint.url}/api/v1/${bookingId}`);
                 console.log(`Booking with ID ${bookingId} has been deleted.`);
                 getData(); // Refresh the bookings data
                 toast.success('Booking deleted successfully', {

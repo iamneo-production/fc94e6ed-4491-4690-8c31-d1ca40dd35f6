@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { endpoint } from './config';
 
 function Bookings() {
   const [bookings, setBookings] = useState([]);
@@ -16,7 +17,7 @@ function Bookings() {
 
   function getData() {
     
-    axios.get(`http://localhost:8080/api/v1/customers/${id}/bookings`)
+    axios.get(`${endpoint.url}/api/v1/customers/${id}/bookings`)
   
       .then(response => {
         setBookings(response.data);
@@ -30,7 +31,7 @@ function Bookings() {
     const reason = prompt("Enter cancellation reason:");
     if (reason) {
       try {
-        const apiUrl = `http://localhost:8080/api/v1/bookings/${bookingId}/cancellations`;
+        const apiUrl = `${endpoint.url}/api/v1/bookings/${bookingId}/cancellations`;
         const data = {
           reason,
           dateCancelled: new Date().toISOString()

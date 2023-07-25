@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './HotelBookingForm.css';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import { endpoint } from './config';
 
 
 
@@ -18,7 +19,7 @@ const HotelBookingForm = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    const response = await axios.get('http://localhost:8081/hotels', {
+    const response = await axios.get(`${endpoint.url}/hotels`, {
       params: {
         cityName: destination,
       },

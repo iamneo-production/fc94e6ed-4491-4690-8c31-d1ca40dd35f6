@@ -21,11 +21,13 @@ import image12 from './assets/image9.jpg';
 import image13 from './assets/im15.jpg';
 import image14 from './assets/image10.jpg';
 import image15 from './assets/image11.jpg';
+import { endpoint } from './config';
 
 const RoomDetails = () => {
     const { roomId } = useParams();
     const [room, setRoom] = useState(null);
     const [roomCounts, setRoomCounts] = useState({});
+    const [ratings, setRatings] = useState({});
     const [bookingForm, setBookingForm] = useState({
         mobileNumber: '',
         checkIn: '',
@@ -36,7 +38,7 @@ const RoomDetails = () => {
 
     const id = localStorage.getItem("customerId");
     const navigate = useNavigate();
-    
+
 
     useEffect(() => {
         fetchRoom(roomId);
@@ -57,11 +59,11 @@ const RoomDetails = () => {
 
     const calculateRoomCounts = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/rooms/');
+            const response = await axios.get(`${endpoint.url}api/rooms/`);
             const rooms = response.data;
             if (room && room.roomType) {
                 const counts = { ...roomCounts };
-                counts [room.roomType]= 0 ;
+                counts[room.roomType] = 0;
                 rooms.forEach((r) => {
                     if (r.roomType === room.roomType) {
                         counts[room.roomType]++;
@@ -76,11 +78,11 @@ const RoomDetails = () => {
         }
     };
 
-    
+
 
     const fetchRoom = async (roomId) => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/rooms/${roomId}`);
+            const response = await axios.get(`${endpoint.url}api/rooms/${roomId}`);
             if (response.data) {
                 setRoom(response.data);
                 setBookingForm({
@@ -98,7 +100,7 @@ const RoomDetails = () => {
         }
     };
 
-    
+
 
     const handleBookingFormChange = (e) => {
         setBookingForm({
@@ -114,15 +116,15 @@ const RoomDetails = () => {
                 roomId: room.roomId,
                 checkInDate: bookingForm.checkIn, // Include the checkInDate value
                 checkOutDate: bookingForm.checkOut,
-                
-                
+
+
             };
-           const res =  await axios.post(`http://localhost:8080/api/v1/customers/${id}/rooms/${roomId}/bookings`, roomBookingData);
+            const res = await axios.post(`${endpoint.url}api/v1/customers/${id}/rooms/${roomId}/bookings`, roomBookingData);
             console.log("booking done", res.data);
-            
-            
+
+
             // Update the room count
-            
+
             setRoomCounts(prevCounts => ({
                 ...prevCounts,
                 [room.roomType]: prevCounts[room.roomType] - 1
@@ -135,7 +137,7 @@ const RoomDetails = () => {
                     navigate('/booking-details');
                 }
             });
-           
+
         } catch (error) {
             console.error('Error booking room:', error);
         }
@@ -183,131 +185,173 @@ const RoomDetails = () => {
             images = [];
     }
 
+    const handleRatingSubmit = (roomType, rating) => {
+        setRatings((prevRatings) => ({
+          ...prevRatings,
+          [roomType]: [...(prevRatings[roomType] || []), rating],
+        }));
+      };
+
+    const averageRating = ratings[room.roomType]
+    ? (ratings[room.roomType].reduce((sum, rating) => sum + rating, 0) / ratings[room.roomType].length).toFixed(1)
+    : 'N/A';
+
     return (
+
+
         <>
             <Navbar />
             <ToastContainer />
-        <div className="pagesize">
-            <h2>{room.roomType}</h2>
-            <div className="room-details">
-               <div className="room-images">
-                    {images.map((image, index) => (
-                        <img key={index} src={image} alt={`Room ${room.roomType} Image ${index}`} />
-                    ))}
-                </div>
-                <div className="room-info">
-                    <p>Description: {description}</p>
-                    <p>Capacity: {room.capacity}</p>
-                    <p>Price: {room.pricePerNight}</p>
-                    <p>Count: {roomCounts[room.roomType] || 0}</p>
-                    <ul>
-                        {facilities.map((facility, index) => (
-                            <li key={index}>{facility}</li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-            <div className="booking-form">
-                <h3>Booking Form</h3>
-                {/* <div>
-                    <label>Mobile Number:</label>
-                    <input
-                        type="text"
-                        name="mobileNumber"
-                        value={bookingForm.mobileNumber}
-                        onChange={handleBookingFormChange}
-                    />
-                        </div>*/}
-                <div>
-                    <label>Check-in:</label>
-                    <input
-                        type='Date'
-                        
-                        name="checkIn"
-                        value={bookingForm.checkIn}
-                        onChange={handleBookingFormChange}
-                    />
-                </div>
-                <div>
-                    <label>Check-out:</label>
-                    <input
-                        type='Date'
-                        
-                        name="checkOut"
-                        value={bookingForm.checkOut}
-                        onChange={handleBookingFormChange}
-                    />
-                </div>
-                {/*<div>
-                    <label>Price:</label>
-                    <input
-                        type="number"
-                        name="price"
-                        value={bookingForm.price}
-                        readOnly
-                    />
-                    </div>
-                <div>
-                    <label>Capacity:</label>
-                    <input
-                        type="number"
-                        name="capacity"
-                        value={bookingForm.capacity}
-                        readOnly
-                    />
-                    </div>*/}
-                <button onClick={handleBooking}>Book Now</button>
-            </div>
+            <div className="pagesize">
+      <h2>{room.roomType}</h2>
+      <div className="room-details">
+        <div className="room-images">
+          {images.map((image, index) => (
+            <img key={index} src={image} alt={`Room ${room.roomType} Image ${index}`} />
+          ))}
+        </div>
+        <div className="room-info">
+          <p>Description: {description}</p>
+          <p>Capacity: {room.capacity}</p>
+          <p>Price: {room.pricePerNight}</p>
+          <p>Count: {roomCounts[room.roomType] || 0}</p>
+          <p>Average Rating: {averageRating}</p>
+          <RatingForm roomType={room.roomType} onSubmit={handleRatingSubmit} />
+          <ul>
+            {facilities.map((facility, index) => (
+              <li key={index}>{facility}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="booking-form">
+        <h3>Booking Form</h3>
+        <div>
+          <label>Mobile Number:</label>
+          <input
+            type="text"
+            name="mobileNumber"
+            value={bookingForm.mobileNumber}
+            onChange={handleBookingFormChange}
+          />
+        </div>
+        <div>
+          <label>Check-in:</label>
+          <input
+            type="date"
+            name="checkIn"
+            value={bookingForm.checkIn}
+            onChange={handleBookingFormChange}
+          />
+        </div>
+        <div>
+          <label>Check-out:</label>
+          <input
+            type="date"
+            name="checkOut"
+            value={bookingForm.checkOut}
+            onChange={handleBookingFormChange}
+          />
+        </div>
+        <div>
+          <label>Price:</label>
+          <input
+            type="number"
+            name="price"
+            value={bookingForm.price}
+            readOnly
+          />
+        </div>
+        <div>
+          <label>Capacity:</label>
+          <input
+            type="number"
+            name="capacity"
+            value={bookingForm.capacity}
+            readOnly
+          />
+        </div>
+        <button onClick={handleBooking}>Book Now</button>
+      </div>
 
-            <div className="hotel-rules">
-                <h2>House Rules</h2>
-                <p>
-                    {room.roomType}, a Luxury Collection Room
-                </p>
-                <div className="rule">
-                    <h3>Check-in</h3>
-                    <p>From 15:00</p>
-                    <p>Guests are required to show a photo identification and credit card upon check-in.</p>
-                </div>
-                <div className="rule">
-                    <h3>Check-out</h3>
-                    <p>Until 12:00</p>
-                </div>
-                <div className="rule">
-                    <h3>Cancellation/Prepayment</h3>
-                    <p>
-                        Cancellation and prepayment policies vary according to accommodation type. Please enter the dates of your stay
-                        and check the conditions of your required room.
-                    </p>
-                </div>
-                <div className="rule">
-                    <h4>Child Policies</h4>
-                    <p>Children of any age are welcome.</p>
-                    <p>
-                        To see correct prices and occupancy information, please add the number of children in your group and their ages
-                        to your search.
-                    </p>
-                    <p>The number of extra beds and cots allowed is dependent on the option you choose. Please check your selected option for more information.</p>
-                    <p>All cots and extra beds are subject to availability.</p>
-                </div>
-                <div className="rule">
-                    <h3>Age Restriction</h3>
-                    <p>The minimum age for check-in is 18.</p>
-                </div>
-                <div className="rule">
-                    <h3>Pets</h3>
-                    <p>Pets are allowed. Charges may be applicable.</p>
-                </div>
-                <div className="rule">
-                    <h3>Groups</h3>
-                    <p>When booking more than 9 rooms, different policies and additional supplements may apply.</p>
-                </div>
-            </div>
-
-            </div>
-            <ToastContainer position={toast.POSITION.TOP_RIGHT} />
+      <div className="hotel-rules">
+        <h2>House Rules</h2>
+        <p>{room.roomType}, a Luxury Collection Room</p>
+        <div className="rule">
+          <h3>Check-in</h3>
+          <p>From 15:00</p>
+          <p>Guests are required to show a photo identification and credit card upon check-in.</p>
+        </div>
+        <div className="rule">
+          <h3>Check-out</h3>
+          <p>Until 12:00</p>
+        </div>
+        {/* <div className="rule">
+          <h3>Cancellation/Prepayment</h3>
+          <p>
+            Cancellation and prepayment policies vary according to accommodation type. Please enter the dates of your stay
+            and check the conditions of your required room.
+          </p>
+        </div> */}
+        <div className="rule">
+          <h3>Child Policies</h3>
+          <p>Children of any age are welcome.</p>
+          <p>
+            To see correct prices and occupancy information, please add the number of children in your group and their ages
+            to your search.
+          </p>
+          <p>
+            The number of extra beds and cots allowed is dependent on the option you choose. Please check your selected option for more information.
+          </p>
+          <p>All cots and extra beds are subject to availability.</p>
+        </div>
+        <div className="rule">
+          <h3>Age Restriction</h3>
+          <p>The minimum age for check-in is 18.</p>
+        </div>
+        <div className="rule">
+          <h3>Pets</h3>
+          <p>Pets are allowed. Charges may be applicable.</p>
+        </div>
+        <div className="rule">
+          <h3>Groups</h3>
+          <p>When booking more than 9 rooms, different policies and additional supplements may apply.</p>
+        </div>
+      </div>
+    </div>
+    <ToastContainer position={toast.POSITION.TOP_RIGHT} />
         </>
     );
+};
+
+const RatingForm = ({ roomType, onSubmit }) => {
+  const [rating, setRating] = useState(0);
+
+  const handleRatingChange = (event) => {
+    setRating(parseInt(event.target.value));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit(roomType, rating);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Rate this room type:
+        <select value={rating} onChange={handleRatingChange}>
+          <option value={0}>-- Select Rating --</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+        </select>
+      </label>
+      <button type="submit">Submit Rating</button>
+    </form>
+  );
 };
 
 export default RoomDetails;

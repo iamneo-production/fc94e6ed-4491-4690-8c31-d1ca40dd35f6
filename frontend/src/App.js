@@ -12,6 +12,13 @@ import RoomDetails from './RoomDetails';
 import RoomTypes from './RoomTypes';
 import Bookings from './Bookings';
 import BookingDetails from './BookingDetails';
+import Dashboard from './Admin/Dashboard';
+import ViewUsers from './Admin/ViewUsers';
+import RoomManagement from './Admin/RoomManagement';
+import AllBookings from './Admin/AllBookings';
+import ManagePayments from './Admin/ManagePayments';
+import Cancellations from './Admin/Cancellations';
+import AllRoomsPage from './Admin/AllRoomsPage';
 
 function App() {
   return (
@@ -29,6 +36,15 @@ function App() {
       <Route path='/room-types' element={<RoomTypes/>}></Route>
       <Route path="/booking-details" element={<BookingDetails />} />
       <Route path='/bookings' element={<Bookings />}></Route>
+
+          <Route path='/admin' element={<Dashboard/>}/>
+          <Route path='/admin/dashboard' element={<Dashboard/>} />
+          <Route path='/admin/view-users' element={<ViewUsers/>} />
+          <Route path='/admin/manage-rooms' element={<RoomManagement/>}/>
+          <Route path='/admin/manage-bookings' element={<AllBookings />} />
+          <Route path='/admin/manage-payments' element={<ManagePayments />} />
+          <Route path='/admin/cancellations' element={<Cancellations/>}></Route>
+          <Route path='/AllRoomsPage' element={<AllRoomsPage/>}></Route>
 
       </Routes>
     </BrowserRouter>
