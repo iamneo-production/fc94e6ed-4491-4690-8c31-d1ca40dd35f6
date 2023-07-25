@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 //import { Link } from "react-router-dom";
 import axios from 'axios';
-import Sidebar from './Sidebar';
+// import Sidebar from './Sidebar';
 import {endpoint} from '../config';
 
 const AllBookings = () => {
@@ -67,7 +67,7 @@ const AllBookings = () => {
     
       <React.Fragment>
       <div style={{ display: 'flex' }}>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div className="container" style={{ backgroundColor: "aliceblue" }}>
           <h1 className="text-center pt-5 pb-5" style={{ color: "white", backgroundColor: "lightslategrey" }}>Admin Dashboard</h1>     
                 <div className="row">
