@@ -16,7 +16,7 @@ import Dashboard from './Admin/Dashboard';
  import ViewUsers from './Admin/ViewUsers';
 import RoomManagement from './Admin/RoomManagement';
 import AllBookings from './Admin/AllBookings';
-// import ManagePayments from './Admin/ManagePayments';
+import ManagePayments from './Admin/ManagePayments';
 import Cancellations from './Admin/Cancellations';
 import AllRoomsPage from './Admin/AllRoomsPage';
 
@@ -42,7 +42,7 @@ function App() {
             <Route path='/admin/view-users' element={<ViewUsers/>} /> 
           <Route path='/admin/manage-rooms' element={<RoomManagement/>}/>
           <Route path='/admin/manage-bookings' element={<AllBookings />} />
-          {/* <Route path='/admin/manage-payments' element={<ManagePayments />} />*/}
+          <Route path='/admin/manage-payments' element={<ManagePayments />} />
   <Route path='/admin/cancellations' element={<Cancellations/>}></Route>
           <Route path='/AllRoomsPage' element={<AllRoomsPage/>}></Route>
 
