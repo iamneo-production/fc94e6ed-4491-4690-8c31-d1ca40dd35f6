@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 //import AdminNavbar from './AdminNavbar';
 //import { Link } from "react-router-dom";
+import Sidebar from './Sidebar';
 
 import { endpoint } from '../config';
 
@@ -25,6 +26,7 @@ const ViewUsers = () => {
     return (
         <>
             <div style={{ display: 'flex' }}>
+                <Sidebar/>
                 
     <React.Fragment>
                     <div className="container" style={{ backgroundColor: "aliceblue" }}>

@@ -1,6 +1,7 @@
 import React from 'react';
 // import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 const Dashboard = () => {
     
@@ -8,6 +9,7 @@ const Dashboard = () => {
     return (
         <>
             <div style={{ display: 'flex' }}>
+                <Sidebar/>
                 
                 <div className="container-fluid" style={{ backgroundColor: "aliceblue" }}>
                     {/* Admin Dashboard Heading */}

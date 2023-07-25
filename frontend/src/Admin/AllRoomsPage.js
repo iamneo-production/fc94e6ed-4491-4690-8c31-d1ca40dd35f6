@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AllRoomsPage.css';
+import Sidebar from './Sidebar';
 import {endpoint} from '../config';
 
 const AllRoomsPage = () => {
@@ -65,7 +66,9 @@ const AllRoomsPage = () => {
 
   return (
     <div>
-      <h2>All Rooms</h2>
+      <div style={{ display: 'flex' }}>
+                <Sidebar />
+      
       <table>
         <thead>
           <tr>
@@ -132,6 +135,7 @@ const AllRoomsPage = () => {
           <button onClick={updateRoomDetails}>Update</button>
         </div>
       )}
+      </div>
     </div>
   );
 };

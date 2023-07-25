@@ -3,7 +3,7 @@ import axios from 'axios';
 import './RoomManagement.css';
 import { Link } from 'react-router-dom';
 import { endpoint } from '../config';
-// import Sidebar from './Sidebar';
+ import Sidebar from './Sidebar';
 
 const RoomManagement = () => {
   const [rooms, setRooms] = useState([]);
@@ -56,7 +56,11 @@ const RoomManagement = () => {
   };
 
   return (
+
   <div className='backimg'>
+    <div style={{ display: 'flex' }}>
+                <Sidebar />
+    
     <div className="containor">
       {/* <h1>Room Management</h1> */}
     {/* <Sidebar/> */}
@@ -113,6 +117,7 @@ const RoomManagement = () => {
           </p>
         ))}
       </div>
+    </div>
     </div>
     </div>
   );

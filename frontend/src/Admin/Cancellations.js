@@ -60,6 +60,7 @@ const Cancellations = () => {
             <div style={{ display: 'flex' }}>
                 
             <React.Fragment>
+                <Sidebar/>
                     <div className="container" style={{ backgroundColor: "aliceblue" }}>
                     <h1 className="text-center pt-5 pb-5" style={{ color: "white", backgroundColor: "lightslategrey" }}>Admin Dashboard</h1>
                     <div className="row">

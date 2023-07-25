@@ -226,7 +226,7 @@ const RoomDetails = () => {
       </div>
       <div className="booking-form">
         <h3>Booking Form</h3>
-        <div>
+        {/*<div>
           <label>Mobile Number:</label>
           <input
             type="text"
@@ -234,7 +234,7 @@ const RoomDetails = () => {
             value={bookingForm.mobileNumber}
             onChange={handleBookingFormChange}
           />
-        </div>
+            </div>*/}
         <div>
           <label>Check-in:</label>
           <input
@@ -253,7 +253,7 @@ const RoomDetails = () => {
             onChange={handleBookingFormChange}
           />
         </div>
-        <div>
+        {/*<div>
           <label>Price:</label>
           <input
             type="number"
@@ -270,7 +270,7 @@ const RoomDetails = () => {
             value={bookingForm.capacity}
             readOnly
           />
-        </div>
+            </div>*/}
         <button onClick={handleBooking}>Book Now</button>
       </div>
 

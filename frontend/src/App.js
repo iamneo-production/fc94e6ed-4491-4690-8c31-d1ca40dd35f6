@@ -43,7 +43,7 @@ function App() {
           <Route path='/admin/manage-rooms' element={<RoomManagement/>}/>
           <Route path='/admin/manage-bookings' element={<AllBookings />} />
           <Route path='/admin/manage-payments' element={<ManagePayments />} />
-  <Route path='/admin/cancellations' element={<Cancellations/>}></Route>
+          <Route path='/admin/cancellations' element={<Cancellations/>}></Route>
           <Route path='/AllRoomsPage' element={<AllRoomsPage/>}></Route>
 
       </Routes>

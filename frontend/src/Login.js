@@ -23,7 +23,7 @@ function Login(props) {
     const handleLogin = () => {
         if (email === "admin@gmail.com" && pass=== "admin") {
             console.log("Login successful! Redirecting to admin page...");
-            navigate("/admin/admin-home");
+            navigate("/admin");
             // Redirect to the admin page
             
         } else {
