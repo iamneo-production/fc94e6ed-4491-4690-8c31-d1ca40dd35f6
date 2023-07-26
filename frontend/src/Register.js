@@ -100,7 +100,7 @@ function Register(props) {
             console.log("Registration successful!");
 
             try {
-                const apiUrl = `${endpoint.url}/api/v1/customers`;
+                const apiUrl = `${endpoint.url}api/v1/customers`;
                 const data = {
                     name,
                     email,
@@ -138,7 +138,7 @@ function Register(props) {
         <div className="form-container">
             <h2>Register</h2>
             <form className="register-form" onSubmit={handleSubmit}>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Name<span style={{color:"red"}}>*</span></label>
                 <input
                     value={name}
                     name="name"
@@ -148,7 +148,7 @@ function Register(props) {
                 />
                 {nameError && <div className="error">{nameError}</div>}
 
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email<span style={{color:"red"}}>*</span></label>
                 <input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -159,7 +159,7 @@ function Register(props) {
                 />
                 {emailError && <div className="error">{emailError}</div>}
 
-                <label htmlFor="phone">Phone</label>
+                <label htmlFor="phone">Phone<span style={{color:"red"}}>*</span></label>
                 <input
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.replace(/\D/, ""))}

@@ -1,4 +1,4 @@
-.getIn {
+/* .getIn {
     text-align: center;
     min-height: 100vh;
     align-items: center;
@@ -77,4 +77,186 @@ input {
         border-radius: 30px;
         padding: 10px 30px 40px 30px;
     }
+} */
+
+.getIn {
+    text-align: center;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: black;   
 }
+
+.auth-form-container
+ {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+
+label {
+    text-align: left;
+    padding: 0.25rem 0;
+}
+
+input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* .rcb {
+    border: none;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background-color: aqua;
+
+} */
+
+.rcb {
+    /* Existing styles */
+    background-color: white;
+    color: #fff;
+    border: none;
+    padding: 8px 14px; /* Reduce the padding as per your preference */
+    border-radius: 5px;
+    font-size: 14px; /* Reduce the font size as per your preference */
+    cursor: pointer;
+  }
+  
+
+.link-btn {
+    margin: 20px;
+    background: none;
+    color: black;
+    text-decoration: underline;
+}
+
+/* LoginReg.css */
+
+/* Styles for the authentication form container */
+.auth-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+  }
+  
+  /* Styles for the login form */
+  .login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+    padding: 0.25rem 0;
+  }
+
+  .getIn {
+    text-align: center;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: black;   
+}
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-form .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .login-form .rcb {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+        border: none;
+        background-color: black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: black;
+        background-color: aqua;
+    
+  }
+  
+  /* Styles for the "Don't have an account? Register here." button */
+  .link-btn {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 16px;
+    margin: 20px;
+    background: none;
+    color: black;
+    text-decoration: underline;
+
+  }
+
+  
+  /* Styles for the admin and customer buttons */
+  .admin-btn,
+  .customer-btn {
+    background-color: white;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  /* Style for the Navbar */
+  /* You can add the styles for the Navbar component here */
+  .login-form .rcb {
+    padding: 8px 12px; /* Reducing the login button size */
+  }
+  
+  .admin-btn {
+    padding: 8px 16px; /* Reducing the admin login button size */
+  }

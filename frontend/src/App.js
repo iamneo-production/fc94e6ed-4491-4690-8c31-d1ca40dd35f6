@@ -24,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path='/' element = {<div className="hotel-booking-form-container"><HotelBookingForm /></div>}></Route>
+      <Route path='/' element = {<Home />}></Route>
       <Route path='/landing' element={<Home/>}></Route>
       <Route path='/register' element={<Control />}></Route>
       <Route path='/login' element={<Login />}></Route>

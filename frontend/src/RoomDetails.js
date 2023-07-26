@@ -181,8 +181,8 @@ const RoomDetails = () => {
             break;
         default:
             description = 'Room Description Not Available';
-            facilities = [];
-            images = [];
+            facilities = ['Facility 1: King or twin beds,Individual climate control,Mini-bar '];
+            images = [image15,image8,image4];
     }
 
     const handleRatingSubmit = (roomType, rating) => {
