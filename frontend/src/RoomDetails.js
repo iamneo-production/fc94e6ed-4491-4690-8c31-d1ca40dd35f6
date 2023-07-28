@@ -27,7 +27,7 @@ const RoomDetails = () => {
     const { roomId } = useParams();
     const [room, setRoom] = useState(null);
     const [roomCounts, setRoomCounts] = useState({});
-    const [ratings, setRatings] = useState({});
+    // const [ratings, setRatings] = useState({});
     const [bookingForm, setBookingForm] = useState({
         mobileNumber: '',
         checkIn: '',
@@ -38,6 +38,8 @@ const RoomDetails = () => {
 
     const id = localStorage.getItem("customerId");
     const navigate = useNavigate();
+    
+    
 
 
     useEffect(() => {
@@ -161,7 +163,7 @@ const RoomDetails = () => {
             break;
         case 'Single economy':
             description = 'Room which offers comfort with. Single bed, ideal for people. travelling for work or to enjoy their. vacation.';
-            facilities = ['Facility 1:  Coffee & Tea Maker', 'Facility 4: Slippers, Wake Up Service'];
+            facilities = ['Facility 1:  Coffee & Tea Maker', 'Facility 2: Slippers, Wake Up Service'];
             images = [image4, image5, image6];
             break;
         case 'Double Economy':
@@ -185,16 +187,16 @@ const RoomDetails = () => {
             images = [image15,image8,image4];
     }
 
-    const handleRatingSubmit = (roomType, rating) => {
-        setRatings((prevRatings) => ({
-          ...prevRatings,
-          [roomType]: [...(prevRatings[roomType] || []), rating],
-        }));
-      };
+    // const handleRatingSubmit = (roomType, rating) => {
+    //     setRatings((prevRatings) => ({
+    //       ...prevRatings,
+    //       [roomType]: [...(prevRatings[roomType] || []), rating],
+    //     }));
+    //   };
 
-    const averageRating = ratings[room.roomType]
-    ? (ratings[room.roomType].reduce((sum, rating) => sum + rating, 0) / ratings[room.roomType].length).toFixed(1)
-    : 'N/A';
+    // const averageRating = ratings[room.roomType]
+    // ? (ratings[room.roomType].reduce((sum, rating) => sum + rating, 0) / ratings[room.roomType].length).toFixed(1)
+    // : '';
 
     return (
 
@@ -202,7 +204,7 @@ const RoomDetails = () => {
         <>
             <Navbar />
             <ToastContainer />
-            <div className="pagesize">
+            {/* <div className="pagesize">
       <h2>{room.roomType}</h2>
       <div className="room-details">
         <div className="room-images">
@@ -221,11 +223,37 @@ const RoomDetails = () => {
             {facilities.map((facility, index) => (
               <li key={index}>{facility}</li>
             ))}
-          </ul>
-        </div>
+          </ul> */}
+          <div className="pagesize">
+    <h2>{room.roomType}</h2>
+    <div className="room-details">
+      <div className="room-images">
+        {images.map((image, index) => (
+          <img key={index} src={image} alt={`Room ${room.roomType} Image ${index}`} />
+        ))}
       </div>
+      <div className="room-info">
+        <p>Description: {description}</p>
+        <p>Capacity: {room.capacity}</p>
+        <p>Price: {room.pricePerNight}</p>
+        <p>Count: {roomCounts[room.roomType] || 0}</p>
+        <ul className="facilities-list">
+      {facilities.map((facility, index) => (
+        <li key={index}>{facility}</li>
+      ))}
+    </ul>
+        {/* <p>Rating: {averageRating}</p>
+        <RatingForm roomType={room.roomType} onSubmit={handleRatingSubmit} /> */}
+      </div>
+    </div>
+    {/* <ul className="facilities-list">
+      {facilities.map((facility, index) => (
+        <li key={index}>{facility}</li>
+      ))}
+    </ul> */}
+      
       <div className="booking-form">
-        <h3>Booking Form</h3>
+        {/* <h3>Booking Form</h3> */}
         {/*<div>
           <label>Mobile Number:</label>
           <input
@@ -275,15 +303,15 @@ const RoomDetails = () => {
       </div>
 
       <div className="hotel-rules">
-        <h2>House Rules</h2>
-        <p>{room.roomType}, a Luxury Collection Room</p>
+        <h3>House Rules</h3>
+        <h3><p>[{room.roomType}, a Luxury Collection Room]</p></h3>
         <div className="rule">
-          <h3>Check-in</h3>
+          <h2>1: Check-in</h2>
           <p>From 15:00</p>
           <p>Guests are required to show a photo identification and credit card upon check-in.</p>
         </div>
         <div className="rule">
-          <h3>Check-out</h3>
+          <h2>2: Check-out</h2>
           <p>Until 12:00</p>
         </div>
         {/* <div className="rule">
@@ -294,7 +322,7 @@ const RoomDetails = () => {
           </p>
         </div> */}
         <div className="rule">
-          <h3>Child Policies</h3>
+          <h2>3: Child Policies</h2>
           <p>Children of any age are welcome.</p>
           <p>
             To see correct prices and occupancy information, please add the number of children in your group and their ages
@@ -306,15 +334,15 @@ const RoomDetails = () => {
           <p>All cots and extra beds are subject to availability.</p>
         </div>
         <div className="rule">
-          <h3>Age Restriction</h3>
+          <h2>4: Age Restriction</h2>
           <p>The minimum age for check-in is 18.</p>
         </div>
         <div className="rule">
-          <h3>Pets</h3>
+          <h2>5: Pets</h2>
           <p>Pets are allowed. Charges may be applicable.</p>
         </div>
         <div className="rule">
-          <h3>Groups</h3>
+          <h2>6: Groups</h2>
           <p>When booking more than 9 rooms, different policies and additional supplements may apply.</p>
         </div>
       </div>
@@ -324,34 +352,34 @@ const RoomDetails = () => {
     );
 };
 
-const RatingForm = ({ roomType, onSubmit }) => {
-  const [rating, setRating] = useState(0);
+// const RatingForm = ({ roomType, onSubmit }) => {
+//   const [rating, setRating] = useState(0);
 
-  const handleRatingChange = (event) => {
-    setRating(parseInt(event.target.value));
-  };
+//   const handleRatingChange = (event) => {
+//     setRating(parseInt(event.target.value));
+//   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit(roomType, rating);
-  };
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     onSubmit(roomType, rating);
+//   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Rate this room type:
-        <select value={rating} onChange={handleRatingChange}>
-          <option value={0}>-- Select Rating --</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </select>
-      </label>
-      <button type="submit">Submit Rating</button>
-    </form>
-  );
-};
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <label>
+//         Rate this room type:
+//         <select value={rating} onChange={handleRatingChange}>
+//           <option value={0}>-- Select Rating --</option>
+//           <option value={1}>1</option>
+//           <option value={2}>2</option>
+//           <option value={3}>3</option>
+//           <option value={4}>4</option>
+//           <option value={5}>5</option>
+//         </select>
+//       </label>
+//       <button type="submit">Submit Rating</button>
+//     </form>
+//   );
+// };
 
 export default RoomDetails;

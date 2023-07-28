@@ -197,7 +197,8 @@ public class RbsPaymentServiceImpl implements RbsPaymentService{
         payment.setPaymentId(paymentDto.getPaymentId());
         payment.setAmount(paymentDto.getAmount());
         payment.setPaymentDateTime(paymentDto.getPaymentDateTime());
-        payment.setPaymentStatus(paymentDto.getPaymentStatus());
+        payment.setPaymentStatus("success");
+        
 
 
         // Set the booking

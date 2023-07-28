@@ -76,7 +76,7 @@ const ManagePayments = () => {
                         </div>
                         <h5 className='mt-3'>Number of Records: {count}</h5>
                         <table className="table table-bordered table-striped mt-5">
-                            <thead className="bg-dark text-white">
+                            <thead className="">
                                 <tr>
                                     <th>Payment Id</th>
                                     <th>Customer Id</th>

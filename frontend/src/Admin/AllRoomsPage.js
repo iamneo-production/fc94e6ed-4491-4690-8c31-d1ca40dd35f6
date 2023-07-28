@@ -43,6 +43,8 @@ const AllRoomsPage = () => {
 
   const deleteRoom = async (roomId) => {
     try {
+      const confirmed = window.confirm('Are you sure you want to cancel this booking?');
+            if (confirmed) 
       await axios.delete(`${endpoint.url}/api/rooms/${roomId}`);
       setRooms(rooms.filter((room) => room.roomId !== roomId));
     } catch (error) {

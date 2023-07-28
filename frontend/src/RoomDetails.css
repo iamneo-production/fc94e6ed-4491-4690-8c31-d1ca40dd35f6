@@ -233,6 +233,19 @@ button[type="submit"]:hover {
     height: auto; /* Automatically adjust image height */
     margin-right: 5px; /* Reduce margin between images */
   }
+  .hotel-rules h2 {
+    text-align: left;
+  }
+
+  /* Reduce the font size of rule headings and descriptions for smaller screens */
+  .rule h3 {
+    font-size: 16px;
+  }
+
+  .rule p {
+    font-size: 14px;
+  }
+}
 
   /* ... Existing Media Queries ... */
-}
+
