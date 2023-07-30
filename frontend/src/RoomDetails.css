@@ -1,0 +1,251 @@
+.room-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.room-images {
+  flex: 1;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.room-images img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.room-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.room-info p {
+  margin-bottom: 10px;
+}
+
+.room-info p:first-child {
+  font-weight: bold;
+}
+
+.pagesize {
+  height: 1000px;
+  width: 1290px;
+}
+
+.hotel-rules {
+  margin-top: 20px;
+}
+
+.hotel-rules h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.rule {
+  margin-bottom: 20px;
+}
+
+.rule h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.rule p {
+  margin-bottom: 5px;
+}
+
+.rating-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.rating-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .hotel-rules h2 {
+    font-size: 20px;
+  }
+
+  .rule h3 {
+    font-size: 16px;
+  }
+
+  .rating-buttons button {
+    font-size: 14px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0d8ae3;
+}
+
+
+/* Additional Styling for Room Details Page */
+
+/* RoomTypes.css */
+
+/* ... Existing CSS ... */
+
+/* Additional Styling for Room Details Page */
+
+.room-details {
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.room-images {
+  flex: 1;
+  display: flex; /* Display images in a row */
+  overflow-x: hidden; /* Hide overflowing images */
+}
+
+.room-images img {
+  width: 300px; /* Width of each image */
+  height: 200px; /* Height of each image */
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.room-info {
+  align-self: flex-start; /* Align info to the top */
+}
+
+.room-info p:first-child {
+  font-size: 20px; /* Increase font size of the first paragraph */
+  color: #333; /* Darken the font color of the description */
+}
+
+.room-info p:last-child {
+  color: #555; /* Darken the font color of the content */
+}
+
+/* ... Existing CSS ... */
+/* ... Existing CSS ... */
+
+/* Additional Styling for Room Details Page */
+
+.room-details {
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.room-images {
+  flex: 1;
+  display: flex; /* Display images in a row */
+  overflow-x: scroll; /* Enable horizontal scrolling for images */
+  white-space: nowrap; /* Ensure images stay in a single line */
+  align-items: flex-start; /* Align images to the top */
+}
+
+.room-images img {
+  width: 300px; /* Width of each image */
+  height: 200px; /* Height of each image */
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.room-info {
+  align-self: flex-start; /* Align info to the top */
+}
+
+.room-info p:first-child {
+  font-size: 20px; /* Increase font size of the first paragraph */
+  color: #333; /* Darken the font color of the description */
+}
+
+.room-info p:last-child {
+  color: #555; /* Darken the font color of the content */
+}
+
+.rating-buttons {
+  display: flex;
+  justify-content: flex-start; /* Align rating buttons to the left */
+  margin-top: 20px; /* Add top margin to separate from other content */
+}
+
+.rating-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* ... Existing CSS ... */
+
+/* Additional Styling for Room Details Page */
+
+@media screen and (max-width: 768px) {
+  /* ... Existing Media Queries ... */
+
+  .room-images {
+    flex: 0 0 100%; /* Force images to occupy the full width on smaller screens */
+    overflow-x: auto; /* Enable horizontal scrolling for images */
+    white-space: nowrap; /* Ensure images stay in a single line */
+  }
+
+  .room-images img {
+    width: 250px; /* Reduce image width for smaller screens */
+    height: auto; /* Automatically adjust image height */
+    margin-right: 5px; /* Reduce margin between images */
+  }
+  .hotel-rules h2 {
+    text-align: left;
+  }
+
+  /* Reduce the font size of rule headings and descriptions for smaller screens */
+  .rule h3 {
+    font-size: 16px;
+  }
+
+  .rule p {
+    font-size: 14px;
+  }
+}
+
+  /* ... Existing Media Queries ... */
+

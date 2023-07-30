@@ -1,0 +1,63 @@
+/* Navbar */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: #d70f2dce !important; 
+}
+
+.nav_ul li {
+    padding: 0 1rem;
+}
+
+.navbar-brand{
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.nav_ul a {
+    font-size: 1.05rem;
+    color: #efecec !important;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.btn1 {
+    border: 0 ;
+    padding: 0.3rem 1.2rem ;
+    color: #fff ;
+    background-color: #01193c;
+}
+
+.btn2 {
+    border: 0 ;
+    padding: 0.3rem 1.2rem ;
+    color: #fff ;
+    background-color: #0844f6ba ;
+}
+
+.btn3{
+    border: 0 ;
+    padding: 0.3rem 1.2rem ;
+    color: #fff;
+    background-color: #5fb0f7ba;
+}
+
+.user-btn{
+    border: 0;
+    padding: 0.5rem 1.4rem;
+    color: #fff;
+    background-color: #01193c;
+    cursor: pointer;
+}
+
+.logout{
+    border: 0;
+    padding: 0.3rem 1.2rem;
+    color: #fff;
+    background-color: #8e72b3ba;
+
+}
+
