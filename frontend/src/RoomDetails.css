@@ -1,0 +1,220 @@
+.room-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.room-images {
+  flex: 1;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.room-images img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.room-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.room-info p {
+  margin-bottom: 10px;
+}
+
+.room-info p:first-child {
+  font-weight: bold;
+}
+
+.pagesize {
+  height: 1000px;
+  width: 1290px;
+}
+
+.hotel-rules {
+  margin-top: 20px;
+}
+
+.hotel-rules h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.rule {
+  margin-bottom: 20px;
+}
+
+.rule h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.rule p {
+  margin-bottom: 5px;
+}
+
+.rating-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.rating-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .hotel-rules h2 {
+    font-size: 20px;
+  }
+
+  .rule h3 {
+    font-size: 16px;
+  }
+
+  .rating-buttons button {
+    font-size: 14px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0d8ae3;
+}
+
+
+/* Additional Styling for Room Details Page */
+
+/* RoomTypes.css */
+
+/* ... Existing CSS ... */
+
+/* Additional Styling for Room Details Page */
+
+.room-details {
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.room-images {
+  align-self: flex-start; /* Align images to the top */
+}
+
+.room-info {
+  align-self: flex-start; /* Align info to the top */
+}
+
+.room-info p:first-child {
+  font-size: 20px; /* Increase font size of the first paragraph */
+}
+
+.room-info p:last-child {
+  color: #888; /* Add a subtle color to the last paragraph */
+}
+
+.pagesize {
+  max-width: 100%; /* Ensure the page width doesn't exceed the viewport */
+}
+
+.hotel-rules {
+  padding: 20px; /* Add padding to the rules section */
+  background-color: #f9f9f9; /* Set a light background color */
+}
+
+.rule {
+  border-left: 2px solid #ddd; /* Add a border to each rule */
+  padding-left: 10px; /* Create some space between the border and rule content */
+}
+
+.rule:last-child {
+  border: none; /* Remove the border from the last rule */
+}
+
+.rule h3 {
+  font-weight: bold; /* Increase font weight of rule headings */
+  color: #555; /* Set a darker color for rule headings */
+}
+
+.rule p {
+  color: #777; /* Set a slightly darker color for rule descriptions */
+}
+
+@media screen and (max-width: 768px) {
+  .room-images {
+    flex: 0 0 100%; /* Force images to occupy the full width on smaller screens */
+    overflow-x: auto; /* Enable horizontal scrolling for images */
+    white-space: nowrap; /* Ensure images stay in a single line */
+  }
+
+  .room-images img {
+    width: 250px; /* Reduce image width for smaller screens */
+    height: auto; /* Automatically adjust image height */
+  }
+
+  .room-info {
+    flex: 0 0 100%; /* Force info to occupy the full width on smaller screens */
+    margin-left: 0; /* Remove the left margin */
+    margin-top: 10px; /* Add top margin for separation */
+  }
+
+  .hotel-rules {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .rating-buttons button {
+    padding: 8px 16px; /* Adjust button padding for smaller screens */
+  }
+
+  /* Align the "House Rules" heading to the left on smaller screens */
+  .hotel-rules h2 {
+    text-align: left;
+  }
+
+  /* Reduce the font size of rule headings and descriptions for smaller screens */
+  .rule h3 {
+    font-size: 16px;
+  }
+
+  .rule p {
+    font-size: 14px;
+  }
+}

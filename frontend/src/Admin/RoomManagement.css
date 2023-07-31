@@ -1,0 +1,164 @@
+/*.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px; /* Set your desired minimum height here} */
+  
+  
+  
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: black; /* Set the font color to black */
+      }
+      
+      h3 {
+        text-align: center;
+        color: black; /* Set the font color to black */
+      }
+      
+      /* Rest of your existing styles */
+      
+      /* Additional styles */
+      label {
+        color: black; /* Set the font color to black */
+      }
+      
+      input[type="text"],
+      input[type="number"],
+      input[type="checkbox"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        color: black; /* Set the font color to black */
+      }
+      
+      button {
+        padding: 8px 12px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #45a049;
+      }
+      
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      th,
+      td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        color: black; /* Set the font color to black */
+      }
+      
+      th {
+        background-color: #f2f2f2;
+      }
+      
+      /* Styling for the sidebar section */
+      .room-count-sidebar {
+        position:sticky;
+        top: 170px; /* Adjust the value as needed for proper positioning */
+        max-width: 200px; /* Adjust the width as needed for your design */
+        margin-left: 20px; /* Adjust the margin as needed for proper spacing */
+        padding: 10px;
+        background-color: #f8f8f8; /* Light gray background color for the sidebar */
+        border: 2px solid #ddd;
+        border-radius: 6px;
+      }
+      
+      /* Your custom button styles */
+      .custom-button {
+        padding: 8px 12px;
+        background-color: #87CEFA; /* Light blue color (you can change the color code as needed) */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .custom-button:hover {
+        background-color: #5CACEE; /* Light blue color on hover (you can change the color code as needed) */
+      }
+      
+      /* Flexbox layout for positioning */
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      } 
+      
+      /* YourComponent.css */
+      .containor {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: row; /* Set the main layout to row */
+        align-items: flex-start; /* Align items to the top of the container */
+        justify-content: flex-start;
+        /* Align items to the start of the container */
+      }
+      
+      /* Sidebar styles */
+      .sidebar {
+        flex: 1; /* Allow the sidebar to take available space */
+        max-width: 200px; /* Adjust the width as needed for your design */
+        padding: 10px;
+        background-color: #f8f8f8; /* Light gray background color for the sidebar */
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-left: 10px; /* Adjust the margin as needed for proper spacing */
+      }
+      
+      /* Main content styles */
+      .main-content {
+        flex: 2; /* Allow the main content to take available space */
+        margin-left: 50px; /* Adjust the margin as needed for proper spacing */
+      }
+      
+      /* Rest of your existing styles */
+      
+      /* Your custom button styles */
+      .custom-button {
+        padding: 8px 12px;
+        background-color: #87CEFA; /* Light blue color (you can change the color code as needed) */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .custom-button:hover {
+        background-color: #5CACEE; /* Light blue color on hover (you can change the color code as needed) */
+      }
+      
+      /* .backimg {
+        background-image: url("../assets/image11.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 650px; 
+        width: 1310px; 
+      } */
+    
+      .Link {
+        display: flex; /* Ensures the button is displayed as a flex item */
+        justify-content: center; /* Centers the button horizontally within the .Link container */
+        align-items: center; /* Centers the button vertically within the .Link container / / Set the container height to the full viewport height // Example background color */
+        padding: 20px; /* Example padding */
+      }
