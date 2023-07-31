@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 import java.util.Date;
 import org.springframework.stereotype.Service;
 
-
+@Service
 public class RbsBookingServiceImpl implements RbsBookingService{
 
     @Autowired

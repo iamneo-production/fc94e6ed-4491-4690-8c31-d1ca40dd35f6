@@ -14,10 +14,12 @@ import com.examly.springapp.exception.ResourceNotFoundException;
 import com.examly.springapp.model.RbsBooking;
 import com.examly.springapp.model.RbsPayment;
 
-
+import com.examly.springapp.model.RbsCustomer;
+import com.examly.springapp.model.RbsRoom;
 import com.examly.springapp.payload.RbsBookingDto;
 import com.examly.springapp.payload.RbsPaymentDto;
-
+import com.examly.springapp.payload.RbsRoomDto;
+import com.examly.springapp.payload.RbsCustomerDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -153,6 +155,30 @@ public class RbsPaymentServiceImpl implements RbsPaymentService{
             bookingDto.setId(booking.getId());
             bookingDto.setCheckInDate(booking.getCheckInDate());
             bookingDto.setCheckOutDate(booking.getCheckOutDate());
+
+            RbsCustomer customer = booking.getCustomer();
+			if (customer != null) {
+				RbsCustomerDto customerDto = new RbsCustomerDto();
+				customerDto.setCustomerId(customer.getCustomerId());
+				customerDto.setName(customer.getName());
+				customerDto.setEmail(customer.getEmail());
+				customerDto.setPhone(customer.getPhone());
+				
+				 bookingDto.setCustomer(customerDto);		
+			}
+			
+			RbsRoom room = booking.getRoom();
+			if(room != null) {
+				RbsRoomDto roomDto = new RbsRoomDto();
+				roomDto.setRoomId(room.getRoomId());
+				roomDto.setRoomType(room.getRoomType());
+				roomDto.setAvailable(room.isAvailable());
+				roomDto.setCapacity(room.getCapacity());
+				roomDto.setPricePerNight(room.getPricePerNight());
+				
+				bookingDto.setRoom(roomDto);
+			}
+		    
             
             
             

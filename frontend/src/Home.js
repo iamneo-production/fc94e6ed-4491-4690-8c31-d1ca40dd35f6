@@ -1,6 +1,6 @@
 import React from 'react'
-//import bg from './images/background-Image.jpg'
-//import './Home.css';
+import bg from './assets/background-Image.jpg'
+import './Home.css';
 import Navbar from './Navbar';
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
                       </div>
                       <div>
                           <div className='home'>
-                              {/*<img src={bg} alt="there is an image"className='img-fluid' />*/}
+                              <img src={bg} alt="there is an image"className='img-fluid' />
                               
                           </div>
                           

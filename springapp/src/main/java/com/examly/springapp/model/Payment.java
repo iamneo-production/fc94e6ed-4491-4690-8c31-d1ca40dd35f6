@@ -5,15 +5,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import java.time.*;
 @Entity
 public class Payment {
-    @Id
+   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int paymentId;
     private double amount;

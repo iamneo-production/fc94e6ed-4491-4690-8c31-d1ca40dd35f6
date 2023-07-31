@@ -21,8 +21,9 @@ import com.examly.springapp.payload.RbsPaymentDto;
 import com.examly.springapp.service.RbsPaymentService;
 import com.examly.springapp.payload.ApiResponse;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("api/v1/bookings")
 public class RbsPaymentController{

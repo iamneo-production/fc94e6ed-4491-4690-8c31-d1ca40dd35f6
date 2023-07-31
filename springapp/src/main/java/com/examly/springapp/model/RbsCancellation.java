@@ -1,4 +1,3 @@
-
 package com.examly.springapp.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,12 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Column;
-
-
-
 import java.util.Date;
-
-
 import javax.persistence.Table;
 
 
@@ -32,7 +26,7 @@ public class RbsCancellation {
     private String reason;
     
     @ManyToOne
-    @JoinColumn(name="booking_id")
+    @JoinColumn(name="id")
     private RbsBooking booking;
     
     
