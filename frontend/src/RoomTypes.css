@@ -1,0 +1,143 @@
+room-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.room-type {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.room-type:hover {
+  transform: translateY(-5px);
+}
+
+.room-type h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.room-type p {
+  font-size: 16px;
+  margin: 0;
+  color: #666666;
+}
+
+.room-type .image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.room-type .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .room-types {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Additional styling */
+
+.room-types {
+  margin-top: 30px;
+}
+
+.room-type {
+  max-width: 400px;
+}
+
+.room-type h3 {
+  font-weight: bold;
+  color: #224f9a; /* Updated heading color */
+}
+
+.room-type p {
+  margin-bottom: 20px;
+  color: #888888; /* Updated paragraph color */
+}
+
+.room-type .image-container {
+  position: relative;
+}
+
+.room-type .image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.room-type:hover .image-container::before {
+  opacity: 1;
+}
+
+.room-type .image-container img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.room-type:hover .image-container img {
+  transform: scale(1.1);
+}
+
+.room-type .btn-book {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333333;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.room-type .btn-book:hover {
+  background-color: #555555;
+}
+
+/* RoomTypes.css */
+
+/* Styling for the room types container */
+.room-types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Styling for each room type box */
+.room-type {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* Styling for the room type image */
+.room-type img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
